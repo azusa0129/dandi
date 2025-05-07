@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>건의 게시판</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+
+    h1 {
+      margin: 0;
+      padding: 10px 20px;
+      font-size: 24px;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      border-bottom: 1px solid #ccc;
+      background-color: #fff;
+    }
+
+    #nav {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    #nav li {
+      margin-left: 20px;
+    }
+
+    h2 {
+      padding: 20px;
+      font-size: 20px;
+    }
+
+    table {
+      width: 90%;
+      margin: 20px auto;
+      border-collapse: collapse;
+      background-color: #fff;
+    }
+
+    th, td {
+      padding: 10px;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+
+    th {
+      background-color: #f5f5f5;
+    }
+
+    form {
+      width: 90%;
+      margin: 20px auto;
+      text-align: right;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      font-size: 14px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="header">
+    <h1>BIND Dandi</h1>
+    <ul id="nav">
+      <li th:text="${username}">이름</li>
+    </ul>
+  </div>
+</header>
+<div>
+  <h2>건의사항</h2>
+  <form action="write" method="post">
+    <input type="hidden" name="userId" value="default">
+    <button type="submit">글 작성</button>
+  </form>
+  <table>
+    <tr th:each="dandi : ${writes}">
+      <td style="width: 70%"><a th:href="@{'/content/' + ${dandi.id}}" th:text="${dandi.title}">제목</a></td>
+      <td style="width: 20%" th:text="${dandi.username}">작성자</td>
+      <td style="width: 10%" th:text="${recommend}">추천 수</td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>

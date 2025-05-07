@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${write.title}">제목</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+
+        body {
+            font-family: "Do Hyeon", sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            max-width: 700px;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 16px;
+            color: #666;
+            margin-top: 0;
+        }
+
+        #content {
+            margin-top: 20px;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        form {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        button {
+            padding: 8px 16px;
+            background-color: #e0e0e0;
+            color: #333;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #d5d5d5;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+<h1 th:text="${write.title}">제목</h1>
+<p><strong>작성자:</strong> <span th:text="${write.username}">작성자</span></p>
+    <form action="/delete" method="post">
+        <input type="hidden" name="id" th:value="${write.id}" />
+        <button type="submit">삭제하기</button>
+    </form>
+    <form action="/back" method="post">
+        <input type="hidden">
+        <button type="submit">뒤로가기</button>
+    </form>
+<hr>
+<div id="content" th:text="${write.content}">본문 내용</div>
+</div>
+</body>
+</html>
