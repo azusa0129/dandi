@@ -1,4 +1,4 @@
-package B1ND.dandi.Domain;
+package B1ND.ToDoList.Domain;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -10,16 +10,12 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class TodoDomain {
+public class Tododomain {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String title;
+    private String tatle;
     private boolean completed;
 
-    public TodoDomain() {}
-    public TodoDomain(String title, boolean completed) {
-        this.title = title;
-        this.completed = completed;
-    }
+    public Tododomain() {}
 }

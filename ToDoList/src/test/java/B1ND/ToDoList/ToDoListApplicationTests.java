@@ -1,10 +1,10 @@
-package B1ND.dandi;
+package B1ND.ToDoList;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DandiApplicationTests {
+class ToDoListApplicationTests {
 
 	@Test
 	void contextLoads() {
