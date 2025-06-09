@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Nanum+Pen+Script&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+    body, html {
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+    }
+    #video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      overflow: hidden;
+    }
+    #video-background iframe {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 150%;
+      height:150%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+    #content {
+      position: relative;
+      z-index: 1;
+      color: white;
+      font-family: "Nanum Pen Script", cursive;
+      font-weight: 400;
+      font-style: normal;
+      border-bottom:2px solid black;
+    }
+    #tatle {
+      margin-left:15px;
+    }
+
+    li {
+      display: inline;
+      margin:100px;
+      font-family: "Do Hyeon", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    ul {
+      justify-self: center;
+    }
+
+    a {
+      color: white;
+      text-decoration: none;
+    }
+    #a {
+      color: #8888e3;
+    }
+
+    .passport-card {
+      width: 300px;
+      height: 400px;
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      overflow: hidden;
+      text-align: center;
+      font-family: 'Noto Sans KR', sans-serif;
+      margin: 20px auto;
+      padding: 20px;
+    }
+
+    .character-photo {
+      width: 230px;
+      height: 230px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-top: 10px;
+    }
+
+    .character-name {
+      font-size: 24px;
+      margin-top: 15px;
+      color: #333;
+    }
+
+    .character-description {
+
+      font-size: 16px;
+      margin-top: 10px;
+      color: #666;
+      font-family: "Do Hyeon", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+  </style>
+    <meta charset="UTF-8">
+    <title>profileTabi</title>
+</head>
+<body>
+
+<div id="video-background">
+  <iframe src="https://www.youtube-nocookie.com/embed/G5tTozKJRD4?autoplay=1&mute=1&loop=1&playlist=G5tTozKJRD4&controls=0&showinfo=0&modestbranding=1&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+
+<div id="content">
+  <h1 id="tatle"><a href="main">Tabi</a></h1>
+  <ul>
+    <li><a href="coverTabi">타비의 커버 곡</a></li>
+    <li>타비 오리지널 곡</li>
+    <li><a href="profileTabi" id="a">타비 프로필</a></li>
+    <li><a href="celebrationTabi">익명 게시판</a></li>
+  </ul>
+</div>
+
+<div class="passport-card">
+  <img src="https://i.namu.wiki/i/e3rntonwHO_cB0tIG8m7kTCDwClHkSxA6x1TWVJ-YBjCMr2DgmYGHv7T5Mo6NATvB9aOcDRe4tQTwc90xQSAoBeQsUghNiel8Zg5yN1qRGxkzbfDzEbYAyu1mzeLfFLHiKPDzhfyvz__Q08pxpZqpflneYQbXZGxeS0pZ7orPLg.webp" alt="캐릭터 이미지" class="character-photo">
+  <h2 class="character-name">타비</h2>
+  <p class="character-description">
+    나이: 16세<br>
+    신장: 150cm<br>
+    생일: 9월 7일<br>
+    팬 네임: 뿡댕이<br>
+    데뷔: 2023년 6월 11일<br>
+  </p>
+</div>
+
+</body>
+</html>

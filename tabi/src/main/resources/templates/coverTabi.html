@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>TabiCoverSong</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Nanum+Pen+Script&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+    #video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      overflow: hidden;
+    }
+    #video-background iframe {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 150%;
+      height:150%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+    #video-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(5px);
+      z-index: -1;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+    a{
+      text-decoration: none;
+      color:white;
+    }
+
+    .q {
+      color: inherit;
+      font-size: 1.2em;
+      color:white;
+      font-family: "Do Hyeon", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    #scroll-container {
+      height: 100vh;
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory;
+      scroll-behavior: smooth;
+      scroll-padding-top: 50vh; /* Add padding to create a slower scroll effect */
+    }
+
+    .slide {
+      scroll-snap-align: start;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    img {
+      width: 56%;
+      max-height: 56%;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+      object-fit: cover;
+    }
+
+    li {
+      display: inline;
+      margin:100px;
+      font-family: "Do Hyeon", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      color:white;
+    }
+
+    #tatle {
+      font-family: "Nanum Pen Script", cursive;
+      font-weight: 400;
+      font-style: normal;
+      margin-left: 15px;
+      color:white;
+    }
+
+    ul {
+      justify-self: center;
+    }
+    .a {
+      color: #8888e3;
+    }
+
+    #content {
+      border-bottom:2px solid black;
+    }
+  </style>
+</head>
+
+
+<body>
+<div id="video-background">
+  <iframe
+    src="https://www.youtube-nocookie.com/embed/E_G9otMLf64?autoplay=1&mute=1&loop=1&playlist=E_G9otMLf64&controls=0&showinfo=0&modestbranding=1&rel=0&start=350"
+    frameborder="0"
+    allow="autoplay; encrypted-media"
+    allowfullscreen>
+  </iframe>
+</div>
+<div id="video-overlay"></div>
+
+
+
+
+<div id="content">
+  <h1 id="tatle"><a href="main">Tabi</a></h1>
+  <ul>
+    <li><a class="a">타비의 커버 곡</a></li>
+    <li>타비 오리지널 곡</li>
+    <li><a href="profileTabi">타비 프로필</a></li>
+    <li><a>익명 게시판</a></li>
+  </ul>
+
+
+
+
+</div>
+<div id="scroll-container">
+  <div class="slide">
+    <img src="https://i.ytimg.com/vi/W-Xr4ceMOXI/hqdefault.jpg" alt="그 여름의 어느 날은 (あの夏のいつかは)">
+    <p>
+      <a href="https://youtu.be/W-Xr4ceMOXI?si=CHsKo2SRANnRj9m9" class="q" >그 여름의 어느 날은</a>
+    </p>
+  </div>
+  <div class="slide">
+    <img src="https://i.ytimg.com/vi/Y52kljOrCsc/hqdefault.jpg" alt="그 여름에 피어나 (あの夏に咲け)">
+    <p><a href="https://youtu.be/Y52kljOrCsc?si=X9I4AgAGY5B2HM2e" class="q">그 여름에 피어나</a></p>
+  </div>
+  <div class="slide">
+    <img src="https://i.ytimg.com/vi/5j8voUwxzmU/hqdefault.jpg" alt="낮에 뜨는 달(안예은)">
+    <p><a href="https://youtu.be/5j8voUwxzmU?si=DTT8ShmPW-oKAqTI"class="q">낮에 뜨는 달</a></p>
+  </div>
+  <div class="slide">
+    <img src="https://i.ytimg.com/vi/HBoqsgRoDw4/hqdefault.jpg" alt="첫사랑(백아)">
+    <p><a href="https://youtu.be/HBoqsgRoDw4?si=oqonTp5OnkCpKHWn"class="q">첫사랑</a></p>
+  </div>
+  <div class="slide">
+    <img src="https://i.ytimg.com/vi/gGQqeRJub3E/hqdefault.jpg" alt="HERO(LUCY)">
+    <p><a href="https://youtu.be/gGQqeRJub3E?si=abc123"class="q">HERO(LUCY)</a></p>
+  </div>
+  <div class="slide">
+    <img src="https://i.ytimg.com/vi/PybjJ4CUDF8/hqdefault.jpg" alt="BE SOMEBODY (육성재)">
+    <p><a href="https://youtu.be/PybjJ4CUDF8?si=def456"class="q">BE SOMEBODY (육성재)</a></p>
+  </div>
+  <div class="slide">
+    <img src="https://i.ytimg.com/vi/Pgd_XVwBVU0/hqdefault.jpg" alt="死神(사신)">
+    <p><a href="https://youtu.be/Pgd_XVwBVU0?si=ghi789"class="q">死神(사신)</a></p>
+  </div>
+  <div class="slide">
+    <img src="https://i.ytimg.com/vi/CmaLZo-DTlU/hqdefault.jpg" alt="さよーならまたいつか！(안녕, 또 언젠가!)">
+    <p><a href="https://youtu.be/CmaLZo-DTlU?si=jkl012"class="q">さよーならまたいつか！(안녕, 또 언젠가!)</a></p>
+  </div>
+</div>
+
+</body>
+</html>

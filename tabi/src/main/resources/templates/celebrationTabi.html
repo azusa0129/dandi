@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>익명 게시판</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Nanum+Pen+Script&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+        /*#video-background {*/
+        /*position: fixed;*/
+        /*top: 0;*/
+        /*left: 0;*/
+        /*width: 100%;*/
+        /*height: 100%;*/
+        /*z-index: -2;*/
+        /*overflow: hidden;*/
+        /*}*/
+        /*#video-background img {*/
+        /*    height: 100vh;*/
+        /*    width: 100vw;*/
+        /*    max-height: none;*/
+        /*    object-fit: cover;*/
+        /*    position: absolute;*/
+        /*    top: 0;*/
+        /*    left: 0;*/
+        /*    z-index: -2;*/
+        /*}*/
+        /*#video-background iframe {*/
+        /*position: absolute;*/
+        /*top: 50%;*/
+        /*left: 50%;*/
+        /*width: 150%;*/
+        /*height:150%;*/
+        /*transform: translate(-50%, -50%);*/
+        /*pointer-events: none;*/
+        /*}*/
+        /*#video-overlay {*/
+        /*position: fixed;*/
+        /*top: 0;*/
+        /*left: 0;*/
+        /*width: 100%;*/
+        /*height: 100%;*/
+        /*background-color: rgba(0, 0, 0, 0.3);*/
+        /*backdrop-filter: blur(7px);*/
+        /*z-index: -1;*/
+        /*}*/
+
+        html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+            background-color: rgb(174,222,251);
+        }
+        a{
+        text-decoration: none;
+        color:black;
+        }
+
+        img {
+        width: 56%;
+        max-height: 56%;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        object-fit: cover;
+        }
+
+        li {
+        display: inline;
+        margin:100px;
+        font-family: "Do Hyeon", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        color:black;
+        }
+
+        #tatle {
+            font-family: "Nanum Pen Script", cursive;
+            font-weight: 400;
+            font-style: normal;
+            margin-left: 15px;
+            color:black;
+        }
+
+        ul {
+        justify-self: center;
+        }
+        .a {
+        color: #8888e3;
+        }
+
+        #content {
+        border-bottom:2px solid black;
+        }
+
+        #todo-list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 50%;
+            border: 2px solid black;
+            justify-self: center;
+        }
+
+        table {
+            width: 50%;
+        }
+
+        tr {
+            width: 15%;
+            height: auto;
+            color:black;
+        }
+
+        td {
+            color: black;
+            text-align: left;
+            border-bottom: 2px solid black;
+            margin-bottom: 15px;
+            font-family: "Jua", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        th {
+                color: black;
+            }
+
+        button {
+            border: 2px solid black;
+            border-radius: 50px;
+        }
+    </style>
+</head>
+<body>
+<!--<div id="video-background">-->
+<!--    <img src="https://i.namu.wiki/i/DcWdf9w7JnwzB64SUFqTqbmy9CnqL-RoI5XhuTEPYyWpq0UA_gMC0KtmZcOcpEcOlJog-W6fxnEe8BMiDyGyCg.webp" alt="Background">-->
+<!--</div>-->
+<!--<div id="video-overlay"></div>-->
+
+
+<div id="content">
+    <h1 id="tatle"><a href="main">Tabi</a></h1>
+    <ul>
+        <li><a href="coverTabi">타비의 커버 곡</a></li>
+        <li>타비 오리지널 곡</li>
+        <li><a href="profileTabi">타비 프로필</a></li>
+        <li><a class="a" href="celebrationTabi">익명게시판</a></li>
+    </ul>
+</div>
+<div id="todo-list">
+    <form action="celebrationTabi" method="post">
+        <input type="text" name="value" required>
+        <button type="submit">입력</button>
+    </form>
+    <table>
+        <thead>
+        <tr>
+            <th>내용</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="todo : ${Tabi}">
+            <td th:text="${todo.value}">내용</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
